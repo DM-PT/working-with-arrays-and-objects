@@ -59,6 +59,18 @@ function employeeUpdater(){
     } return employees
   }
 
+// const employeeUpdater = () => {
+//   employees.forEach((element, index, array) => {
+//     if(element.firstName  === 'Theo'){
+//       employees.splice(index, 1)
+//     }
+//     if(element.firstName === 'Theo'){
+//       element.department = 'HR'
+//     }
+//   })
+//   return employees
+// }
+
 
 
 ////////// PROBLEM 2 //////////
@@ -78,7 +90,7 @@ var workplaceAccidents = [12, 56, 44, 3, 29, 56, 56, 3, 7, 12];
 //Code Here
 // function removeDuplicates(){
 //   for(let i = 0; i < workplaceAccidents.length; i++){
-//     for(let j = 0; j < workplaceAccidents[i].length; j++){
+//     for(let j = 0; j < workplaceAccidents.length; j++){
 //       if(i === j){
 //       delete i
 //     }
@@ -86,6 +98,18 @@ var workplaceAccidents = [12, 56, 44, 3, 29, 56, 56, 3, 7, 12];
 //   }
 //   return workplaceAccidents
 // }
+
+const removeDuplicates = () => {
+  for(let i = 0; i < workplaceAccidents.length; i++){
+    for(let j = i + 1; j< workplaceAccidents.length; j++){
+      if(workplaceAccidents[i] === workplaceAccidents[j]){
+        workplaceAccidents.splice(j,1)
+        
+      }
+    }
+  }
+  return workplaceAccidents
+}
 
 
 ////////// PROBLEM 3 //////////
@@ -112,7 +136,7 @@ var cat = {
     2. Assign fluffy2ndFriend the name of Fluffy's 2nd friend.
 */
 
-//Code Here
+// Code Here
 var grumpyActivity = cat.catFriends[0].activities[1];
 var fluffy2ndFriend = cat.catFriends[1].name;
 
@@ -164,6 +188,13 @@ var myCar = {
 //   }
 // }
 
+const recordCleaner = () => {
+  myCar.accidents.forEach(element => {
+    element.atFaultForAccident = false;
+  })
+    return myCar
+  }
+
 
 
 ////////// PROBLEM 5 //////////
@@ -181,9 +212,21 @@ var numsArr = [ [1, 2, 3, 4], [5, 6], [7, 8, 9, 10, 11]];
     4. Return the modified numsArr.
 */
 
-function looper(){
-  for(let i = 0; i < numsArr.length; i++)
+// function looper(){
+//   for(let i = 0; i < numsArr.length; i++)
   
+// }
+
+
+const looper = () => {
+  numsArr.forEach((element, index, array) => {
+    element.forEach((element, index, array) => {
+if(element % 2 === 0){
+  array[index] = 'even'
+} else {
+  array[index] = 'odd'
 }
-
-
+    })
+  })
+  return numsArr
+}

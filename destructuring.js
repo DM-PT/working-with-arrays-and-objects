@@ -125,10 +125,24 @@ let largeNumbers = ({first, second, third}) => {
   Find the longest array and return that array.
 */
 
-// let numberGroups = ({a, b, c}) => {
-//   a.sort();
-//   b.sort();
-//   c.sort();
+
+const numberGroups = ({a, b, c,}) => {
+let sortedArrays = [a, b, c]
+sortedArrays.sort((a,b) => {
+  return b.length - a.length
+})
+  return sortedArrays[0]
+}
+  
+
+// const numberGroups =  ({a, b, c}) => {
+//   if(a.length > b.length && a.length> c.length){
+//     return a
+//   } else if (b.lenghth > a.length && b.length > c.length){
+//     return b
+//   } else {
+//     return c
+//   }
 // }
 
 
